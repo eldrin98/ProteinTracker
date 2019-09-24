@@ -18,9 +18,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button helpBtn = (Button) findViewById(R.id.helpButton);
-        helpBtn.setOnClickListener(helpButtonListener);
-
         TextView textView = (TextView) findViewById(R.id.mainActivityTextView);
         //Button myBtn = (Button) findViewById(R.id.button1);
 
@@ -38,18 +35,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-        private View.OnClickListener helpButtonListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, HelpActivity.class);
-                Bundle b = new Bundle();
-                EditText myEditText = (EditText)findViewById(R.id.editText1);
-                b.putString("helpString",myEditText.getText().toString());
-                intent.putExtras(b);
-                startActivity(intent);
-            }
-        };
-
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -65,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void GoToList(View view) {
         Intent intent = new Intent(MainActivity.this, listActivity.class);
+        startActivity(intent);
+    }
+
+    public void GoToListMhs(View view) {
+        Intent intent = new Intent(MainActivity.this, ListMahasiswaActivity.class);
         startActivity(intent);
     }
 }
