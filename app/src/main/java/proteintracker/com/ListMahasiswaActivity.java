@@ -56,5 +56,6 @@ public class ListMahasiswaActivity extends AppCompatActivity {
     public void GoToUpdate(View view) {
         Intent intent = new Intent(ListMahasiswaActivity.this, UpdateMhsActivty.class);
         startActivity(intent);
+
     }
 }
