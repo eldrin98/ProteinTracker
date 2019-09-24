@@ -1,6 +1,7 @@
 package proteintracker.com;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.ButtonBarLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,20 +22,20 @@ public class MainActivity extends AppCompatActivity {
         helpBtn.setOnClickListener(helpButtonListener);
 
         TextView textView = (TextView) findViewById(R.id.mainActivityTextView);
-        textView.setText("Test untuk update View");
+        //Button myBtn = (Button) findViewById(R.id.button1);
 
-        if(savedInstanceState != null){
-            Log.d("ProteinTracker",savedInstanceState.getString("abc"));
-        }
-
-        Button myBtn = (Button) findViewById(R.id.button1);
-        myBtn.setOnClickListener(new View.OnClickListener() {
+        //textView.setText(R.string.test_untuk_update_view);
+        /*myBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 EditText myEditText = (EditText) findViewById(R.id.editText1);
                 Log.d("Proteintracker", myEditText.getText().toString());
             }
-        });
+        });*/
+
+        if(savedInstanceState != null){
+            Log.d("ProteinTracker",savedInstanceState.getString("abc"));
+        }
     }
 
         private View.OnClickListener helpButtonListener = new View.OnClickListener() {
@@ -55,5 +56,15 @@ public class MainActivity extends AppCompatActivity {
 
         outState.putString("abc","test");
         super.onSaveInstanceState(outState);
+    }
+
+    public void GoToFragment(View View){
+        Intent intent = new Intent(MainActivity.this, BlankFragment2.class);
+        startActivity(intent);
+    }
+
+    public void GoToList(View view) {
+        Intent intent = new Intent(MainActivity.this, listActivity.class);
+        startActivity(intent);
     }
 }
