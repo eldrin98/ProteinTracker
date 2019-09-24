@@ -56,5 +56,6 @@ public class MainActivity extends AppCompatActivity {
     public void GoToListMhs(View view) {
         Intent intent = new Intent(MainActivity.this, ListMahasiswaActivity.class);
         startActivity(intent);
+
     }
 }
