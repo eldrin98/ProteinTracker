@@ -1,5 +1,6 @@
 package proteintracker.com.Model;
 
+
 public class Mahasiswa {
         private String nama;
         private String npm;
