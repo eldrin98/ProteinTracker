@@ -30,6 +30,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         recyclerView.setAdapter(mahasiswaAdapter);
     }
 
+
     private void addData() {
         mahasiswaArrayList = new ArrayList<>();
         mahasiswaArrayList.add(new Mahasiswa("Scorpio Milo","1414370309","123456789"));
